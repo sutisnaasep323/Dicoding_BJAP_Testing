@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         mainViewModel = MainViewModel(CuboidModel())
 
-        activityMainBinding.btnResult.setOnClickListener(this)
+        activityMainBinding.btnSave.setOnClickListener(this)
         activityMainBinding.btnCalculateCircumference.setOnClickListener(this)
         activityMainBinding.btnCalculateSurfaceArea.setOnClickListener(this)
         activityMainBinding.btnCalculateVolume.setOnClickListener(this)
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             else -> {
                 when (v.id) {
-                    R.id.btn_result -> {
+                    R.id.btn_save -> {
                         mainViewModel.save(length.toDouble(), width.toDouble(), height.toDouble())
                         visible()
                     }
@@ -70,13 +70,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         activityMainBinding.btnCalculateVolume.visibility = View.VISIBLE
         activityMainBinding.btnCalculateSurfaceArea.visibility = View.VISIBLE
         activityMainBinding.btnCalculateCircumference.visibility = View.VISIBLE
-        activityMainBinding.btnResult.visibility = View.GONE
+        activityMainBinding.btnSave.visibility = View.GONE
     }
 
     private fun gone() {
         activityMainBinding.btnCalculateVolume.visibility = View.GONE
         activityMainBinding.btnCalculateCircumference.visibility = View.GONE
         activityMainBinding.btnCalculateSurfaceArea.visibility = View.GONE
-        activityMainBinding.btnResult.visibility = View.VISIBLE
+        activityMainBinding.btnSave.visibility = View.VISIBLE
     }
 }
