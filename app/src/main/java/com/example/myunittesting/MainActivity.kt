@@ -3,6 +3,7 @@ package com.example.myunittesting
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import com.example.myunittesting.databinding.ActivityMainBinding
 import org.w3c.dom.Text
@@ -11,6 +12,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var activityMainBinding: ActivityMainBinding
     private lateinit var mainViewModel: MainViewModel
+    private val TAG = "MyTest"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +25,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         activityMainBinding.btnCalculateCircumference.setOnClickListener(this)
         activityMainBinding.btnCalculateSurfaceArea.setOnClickListener(this)
         activityMainBinding.btnCalculateVolume.setOnClickListener(this)
+
     }
 
     override fun onClick(v: View) {
@@ -32,13 +35,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         when {
             TextUtils.isEmpty(length) -> {
-                activityMainBinding.edtLength.error = "Field tak boleh kosong"
+                activityMainBinding.edtLength.error = "Field ini tidak boleh kosong"
             }
             TextUtils.isEmpty(width) -> {
-                activityMainBinding.edtWidth.error = "Field tak boleh kosong"
+                activityMainBinding.edtWidth.error = "Field ini tidak boleh kosong"
             }
             TextUtils.isEmpty(height) -> {
-                activityMainBinding.edtHeight.error = "Field tak boleh kosong"
+                activityMainBinding.edtHeight.error = "Field ini tidak boleh kosong"
             }
             else -> {
                 when (v.id) {

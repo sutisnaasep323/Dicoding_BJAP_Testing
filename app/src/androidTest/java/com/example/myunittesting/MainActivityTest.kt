@@ -21,6 +21,7 @@ class MainActivityTest {
     private val emptyInput = ""
     private val fieldEmpty = "Field ini tidak boleh kosong"
 
+
     @Before
     fun setup(){
         ActivityScenario.launch(MainActivity::class.java)
@@ -107,4 +108,6 @@ class MainActivityTest {
         onView(withId(R.id.btn_save)).check(matches(isDisplayed()))
         onView(withId(R.id.btn_save)).perform(click())
     }
+
+
 }
